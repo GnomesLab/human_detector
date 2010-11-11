@@ -23,16 +23,8 @@ describe HumanDetector::FormTagHelper do
         @html.css('label.question').should_not be_empty
       end
 
-      it 'span_class' do
-        @html.css('span.captcha').should_not be_empty
-      end
-
       it 'input_class' do
         @html.css('input.answer').should_not be_empty
-      end
-
-      it 'label_text' do
-        @html.css('span').inner_text.should == 'Please answer the following logic question:'
       end
 
       it 'input_text' do
@@ -42,27 +34,15 @@ describe HumanDetector::FormTagHelper do
 
     describe 'overridables' do
       it 'label_class' do
-        @html = Nokogiri::HTML(@helper.human_detector_tag :label_class => 'new_class')
+        @html = Nokogiri::HTML(@helper.human_detector_tag :label_css => 'new_class')
         @html.css('label.new_class').should_not be_empty
         @html.css('label.question').should be_empty
       end
 
       it 'input_class' do
-        @html = Nokogiri::HTML(@helper.human_detector_tag :input_class => 'new_class')
+        @html = Nokogiri::HTML(@helper.human_detector_tag :input_css => 'new_class')
         @html.css('input.new_class').should_not be_empty
         @html.css('input.answer').should be_empty
-      end
-
-      it 'span_class' do
-        @html = Nokogiri::HTML(@helper.human_detector_tag :span_class => 'new_class')
-        @html.css('span.new_class').should_not be_empty
-        @html.css('span.captcha').should be_empty
-      end
-
-      it 'span_text' do
-        @html = Nokogiri::HTML(@helper.human_detector_tag :span_text => 'new_text')
-        @html.css('span').inner_text.should == 'new_text'
-        @html.css('span').inner_text.should_not == 'Please answer the following logic question:'
       end
 
       it 'input_text' do

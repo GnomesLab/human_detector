@@ -1,4 +1,4 @@
 Factory.define(:question) do |q|
-  q.question "soma de um mais um"
-  q.answer "dois"
+  q.question 'How much is 1 + 1?'
+  q.answer '2'
 end

@@ -1,4 +1,4 @@
-Factory.define(:question) do |q|
-  q.question 'How much is 1 + 1?'
-  q.answer '2'
+Factory.define(:question, :class => HumanDetector::Question) do |q|
+  q.sequence(:title)  { |n| "How much is #{n} + 1?" }
+  q.sequence(:answer) { |n| "#{n+1}" }
 end

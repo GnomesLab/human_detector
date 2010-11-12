@@ -1,7 +1,10 @@
-class Question < ActiveRecord::Base
-  atrr_acessible :question, :answer
-  
-  validates :question, :presence => true, :length => { :within => 3..30 }
-  validates :answer, :presence => true
-  
+module HumanDetector
+
+  class Question < ActiveRecord::Base
+    set_table_name 'human_detector_questions'
+
+    validates :title, :presence => true
+    validates :answer, :presence => true
+  end
+
 end

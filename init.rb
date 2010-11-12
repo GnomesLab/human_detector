@@ -1,6 +1,7 @@
 require 'action_view'
+require 'action_controller'
+require 'active_record'
 require 'human_detector'
 
-autoload :Question, 'human_detector/question'
-
 ActionView::Helpers::FormTagHelper.send :include, HumanDetector::FormTagHelper
+ActionController::Base.send :include, HumanDetector::HumanDetection

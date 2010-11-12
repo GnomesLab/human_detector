@@ -1,0 +1,9 @@
+defaults: &defaults
+  adapter: sqlite3
+  database: spec/db/human_detector_dev.sqlite3
+  pool: 5
+  timeout: 5000
+
+test: &test
+  database: spec/db/human_detector_test.sqlite3
+  <<: *defaults

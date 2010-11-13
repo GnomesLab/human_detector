@@ -70,3 +70,6 @@ rescue StandardError => e
   puts "Something went wrong while attempting to load your database file, or while configuring ActiveRecord."
   throw e
 end
+
+# Requires all custom controllers
+Dir.glob(File.join(File.dirname(__FILE__), 'controllers', '*_controller.rb')).each { |f| require f }

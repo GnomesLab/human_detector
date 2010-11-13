@@ -2,6 +2,4 @@
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
 [0m
-  [1m[35mSQL (1.7ms)[0m  DELETE FROM "comments";
-  [1m[36mSQL (1.6ms)[0m  [1mDELETE FROM "questions";[0m
-  [1m[35mSQL (1.5ms)[0m  DELETE FROM "human_detector_questions";
+  [1m[35mSQL (2.1ms)[0m  DELETE FROM "human_detector_questions";

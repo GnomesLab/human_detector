@@ -1,7 +1,7 @@
 module HumanDetector
 
-  autoload :FormTagHelper,  'human_detector/form_tag_helper/human_detector_tag'
-  autoload :HumanDetection, 'human_detector/controllers/human_detection'
+  autoload :FormTagHelper,  'human_detector/form_tag_helper'
+  autoload :ActionControllerHelper, 'human_detector/action_controller_helper'
   autoload :Question, 'human_detector/question'
 
 end # HumanDetector

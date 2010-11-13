@@ -4,4 +4,4 @@ require 'active_record'
 require 'human_detector'
 
 ActionView::Helpers::FormTagHelper.send :include, HumanDetector::FormTagHelper
-ActionController::Base.send :include, HumanDetector::HumanDetection
+ActionController::Base.send :extend, HumanDetector::ActionControllerHelper

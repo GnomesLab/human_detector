@@ -4,5 +4,5 @@ spec/config/database.yml
 spec/log/*.log
 .DS_Store
 pkg/*.gem
-spec/db/*.sqlite3
+spec/db/human_detector_test.sqlite3
 !.gitignore

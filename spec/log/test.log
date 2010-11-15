@@ -1,0 +1,50 @@
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.8ms)[0m  DELETE FROM "human_detector_questions";
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('2', '2010-11-15 18:00:51.559243', 'How much is 1 + 1?', '2010-11-15 18:00:51.559243')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "human_detector_questions"[0m
+  [1m[35mHumanDetector::Question Load (0.1ms)[0m  SELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('3', '2010-11-15 18:00:51.619357', 'How much is 2 + 1?', '2010-11-15 18:00:51.619357')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "human_detector_questions"
+  [1m[36mHumanDetector::Question Load (0.1ms)[0m  [1mSELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('4', '2010-11-15 18:00:51.626854', 'How much is 3 + 1?', '2010-11-15 18:00:51.626854')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "human_detector_questions"[0m
+  [1m[35mHumanDetector::Question Load (0.1ms)[0m  SELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('5', '2010-11-15 18:00:51.633889', 'How much is 4 + 1?', '2010-11-15 18:00:51.633889')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) AS count_id FROM "human_detector_questions"
+  [1m[36mHumanDetector::Question Load (0.1ms)[0m  [1mSELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 1) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('6', '2010-11-15 18:00:51.666043', 'How much is 5 + 1?', '2010-11-15 18:00:51.666043')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "human_detector_questions"[0m
+  [1m[35mHumanDetector::Question Load (0.1ms)[0m  SELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 0) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('7', '2010-11-15 18:00:51.673598', 'How much is 6 + 1?', '2010-11-15 18:00:51.673598')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "human_detector_questions"
+  [1m[36mHumanDetector::Question Load (0.1ms)[0m  [1mSELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "human_detector_questions"
+  [1m[36mHumanDetector::Question Load (0.1ms)[0m  [1mSELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 0) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('8', '2010-11-15 18:00:51.682254', 'How much is 7 + 1?', '2010-11-15 18:00:51.682254')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "human_detector_questions"[0m
+  [1m[35mHumanDetector::Question Load (0.1ms)[0m  SELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 0) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "human_detector_questions"[0m
+  [1m[35mHumanDetector::Question Load (0.1ms)[0m  SELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('9', '2010-11-15 18:00:51.690421', 'How much is 8 + 1?', '2010-11-15 18:00:51.690421')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "human_detector_questions"
+  [1m[36mHumanDetector::Question Load (0.1ms)[0m  [1mSELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 1) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "human_detector_questions"
+  [1m[36mHumanDetector::Question Load (0.1ms)[0m  [1mSELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 0) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('10', '2010-11-15 18:00:51.698991', 'How much is 9 + 1?', '2010-11-15 18:00:51.698991')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "human_detector_questions"[0m
+  [1m[35mHumanDetector::Question Load (0.1ms)[0m  SELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 0) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "human_detector_questions"[0m
+  [1m[35mHumanDetector::Question Load (0.1ms)[0m  SELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('11', '2010-11-15 18:00:51.708396', 'How much is 10 + 1?', '2010-11-15 18:00:51.708396')[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) AS count_id FROM "human_detector_questions"
+  [1m[36mHumanDetector::Question Load (0.1ms)[0m  [1mSELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 0) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "human_detector_questions" ("answer", "created_at", "title", "updated_at") VALUES ('12', '2010-11-15 18:00:51.715852', 'How much is 11 + 1?', '2010-11-15 18:00:51.715852')
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) AS count_id FROM "human_detector_questions"[0m
+  [1m[35mHumanDetector::Question Load (0.1ms)[0m  SELECT "human_detector_questions".* FROM "human_detector_questions" WHERE (id >= 0) LIMIT 1

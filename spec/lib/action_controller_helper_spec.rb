@@ -15,17 +15,17 @@ describe HumanDetector::ActionControllerHelper do
       it 'accepts an array with the actions to protect' do
         ApplicationController.class_eval { human_detection :only => [:new] }
         ApplicationController._process_action_callbacks.select { |c| c.kind == :before && c.options[:only] == [:new] }
-          .should_not be_empty
+        .should_not be_empty
       end
 
       it 'accepts an array with the actions to not protect' do
         ApplicationController.class_eval { human_detection :except => [:new] }
         ApplicationController._process_action_callbacks.select { |c| c.kind == :before && c.options[:except] == [:new] }
-          .should_not be_empty
+        .should_not be_empty
       end
 
     end # options
 
   end # human_detection
 
-end # HumanDetector::HumanDetection
+end # HumanDetector::ActionControllerHelper

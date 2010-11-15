@@ -24,6 +24,8 @@ GEM
       activesupport (= 3.0.1)
       arel (~> 1.0.0)
       tzinfo (~> 0.3.23)
+    activerecord_random (1.0.0.rc)
+      activerecord (~> 3.0.1)
     activeresource (3.0.1)
       activemodel (= 3.0.1)
       activesupport (= 3.0.1)
@@ -103,6 +105,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack (~> 3.0.1)
   activerecord (~> 3.0.1)
+  activerecord_random (= 1.0.0.rc)
   database_cleaner (~> 0.6.0)
   factory_girl_rails (~> 1.0.0)
   nokogiri (~> 1.4.3)

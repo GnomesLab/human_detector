@@ -9,6 +9,7 @@ begin
   require 'nokogiri'
   require 'factory_girl'
   require 'database_cleaner'
+  require 'human_detector'
 
   RSpec.configure do |config|
     config.debug = true

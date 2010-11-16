@@ -1,3 +1,5 @@
+require 'digest'
+
 module HumanDetector
 
   class Question < ActiveRecord::Base

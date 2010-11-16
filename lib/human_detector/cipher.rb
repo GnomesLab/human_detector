@@ -7,8 +7,24 @@ module HumanDetector
     IV  = "\xDA\xFD+\xF3.A\x05z2\xB8\xF2Lq\x8E\xB3o"
 
     def self.encrypt(text)
-      return nil unless text
-    end
+      aes_wrapper :encrypt, text
+    end # encrypt
+
+    def self.decrypt(text)
+      aes_wrapper :decrypt, text
+    end # decrypt
+
+    private
+      def self.aes_wrapper(direction, text)
+        return nil unless text
+
+        aes = OpenSSL::Cipher::Cipher.new('aes-256-cbc').send(direction)
+        aes.key = KEY
+        aes.iv = IV
+
+        aes.update(text) << aes.final
+      end
+
   end # Cipher
 
 end # HumanDetector

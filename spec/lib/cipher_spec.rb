@@ -32,8 +32,9 @@ describe HumanDetector::Cipher do
         subject.encrypt(nil).should be_nil
       end
 
-      it "returnes the encrypted string" do
-        subject.encrypt('gnomeslab').should == "\x8E\xFB>\xF8\x9D\xC3hq\xE1\x93-\x82_\xD2\xDB\xAF"
+      it "returns the encrypted text" do
+        # We need to use the decrypt due to the fact that IV is a randomly generated value
+        subject.decrypt(subject.encrypt('gnomeslab')).should == 'gnomeslab'
       end
 
     end # encrypt
@@ -53,7 +54,7 @@ describe HumanDetector::Cipher do
       end
 
       it "returnes the raw string" do
-        subject.decrypt("\x8E\xFB>\xF8\x9D\xC3hq\xE1\x93-\x82_\xD2\xDB\xAF").should == 'gnomeslab'
+        subject.decrypt("lOsALS7ceDWRpYz9gRfeUuaEsrv0OU6i6N1Y4ZyVioY=%0A").should == 'gnomeslab'
       end
 
     end # decrypt

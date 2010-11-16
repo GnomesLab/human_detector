@@ -19,7 +19,7 @@ module HumanDetector
             else
               if options.include?(:instance_variable) && options.include?(:model)
                 self.instance_variable_set(options[:instance_variable], options[:model])
-              else 
+              else
                 self.instance_variable_set("@#{self.controller_name.singularize}".to_sym, self.controller_name.singularize.capitalize.constantize.new(params[self.controller_name.singularize.to_sym]))
               end
               flash[:error] = options[:flash_error]

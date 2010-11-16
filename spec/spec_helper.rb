@@ -37,7 +37,7 @@ rescue StandardError => e
   throw e
 end
 
-# Requires supporting files with custom matchers and macros, etc, in ./support/ and its subdirectories.
+# Requires supporting files with custom matchers and macros in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 # Requires all supporting factories
@@ -71,6 +71,3 @@ rescue StandardError => e
   puts "Something went wrong while attempting to load your database file, or while configuring ActiveRecord."
   throw e
 end
-
-# Requires all custom controllers
-Dir.glob(File.join(File.dirname(__FILE__), 'controllers', '*_controller.rb')).each { |f| require f }

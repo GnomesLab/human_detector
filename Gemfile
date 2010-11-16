@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'actionpack', '~> 3.0.1'
 gem 'activerecord', '~> 3.0.1'
-gem 'activerecord_random', '1.0.0.rc'
+gem 'activerecord_random', '1.0.0.rc2'
 
 group :development, :test do
   gem 'sqlite3-ruby', '~> 1.3.2'

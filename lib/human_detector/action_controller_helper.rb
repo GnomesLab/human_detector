@@ -2,18 +2,20 @@ module HumanDetector
 
   module ActionControllerHelper
 
-    def human_detection(options={})
-      options.reverse_merge! @human_detection_defaults
+    def human_detector(options={})
+      options.reverse_merge! human_detector_default_options
 
       before_filter :only => (options[:only].is_a?(Hash) ? options[:only].keys : options[:only]) do
         human_filter(options)
       end
-    end # human_detection
+    end # human_detector
 
     private
-      @human_detection_defaults = { :only => { :create => :new, :update => :edit },
-                                    :flash => { :error => 'Invalid captcha answer' },
-                                    :input_name => 'question_answer' }
+      def human_detector_default_options
+        @human_detector_default_options ||= { :only => { :create => :new, :update => :edit },
+                                              :flash => { :error => 'Invalid captcha answer' },
+                                              :input_name => 'question_answer' }
+      end
 
       def human_filter(options)
         human_fail(options) unless params.include?('question_id') && params[options[:input_name]] ==
@@ -42,7 +44,7 @@ module HumanDetector
       def extract_render_name(options)
         options[:only].is_a?(Hash) ?
           options[:only][action_name.to_sym] :
-            @human_detection_defaults[:only][action_name.to_sym] || :index
+          human_detector_default_options[:only][action_name.to_sym] || :index
       end # extract_render_name
 
   end # ActionControllerHelper

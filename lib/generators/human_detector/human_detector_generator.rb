@@ -1,7 +1,8 @@
+require 'rails/generators/active_record'
+
 module HumanDetector
 
   module Generators
-    require 'rails/generators/active_record'
 
     class HumanDetectorGenerator < ActiveRecord::Generators::Base
       desc "Generates the migration required to support HumanDetector Ruby Gem."

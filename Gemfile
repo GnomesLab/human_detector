@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
-gem 'actionpack', '~> 3.0.1'
-gem 'activerecord', '~> 3.0.1'
-gem 'activerecord_random', '1.0.0.rc2'
+gem 'actionpack', '~> 3.0.0'
+gem 'activerecord', '~> 3.0.0'
+gem 'activerecord_random', '~> 1.0.0'
 
 group :development, :test do
   gem 'fuubar', '~> 0.0'

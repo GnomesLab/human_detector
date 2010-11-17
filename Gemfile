@@ -5,6 +5,7 @@ gem 'activerecord', '~> 3.0.1'
 gem 'activerecord_random', '1.0.0.rc2'
 
 group :development, :test do
+  gem 'fuubar', '~> 0.0'
   gem 'sqlite3-ruby', '~> 1.3.2'
   gem 'ruby-debug19', '~> 0.11.0'
   gem 'rspec', '~> 2.0.0'

@@ -42,7 +42,7 @@ module HumanDetector
       def extract_render_name(options)
         options[:only].is_a?(Hash) ?
           options[:only][action_name.to_sym] :
-            @human_detection_defaults[:only][action_name.to_sym]] || :index
+            @human_detection_defaults[:only][action_name.to_sym] || :index
       end # extract_render_name
 
   end # ActionControllerHelper

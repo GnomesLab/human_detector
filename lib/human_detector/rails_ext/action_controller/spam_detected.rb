@@ -8,6 +8,10 @@ module HumanDetector
                                          :input_name => 'human_detector_answer' }
 
       private
+        def human_detected?(options = {})
+          !spam_detected?(options)
+        end
+
         def spam_detected?(options = {})
           options.reverse_merge! HUMAN_DETECTOR_DEFAULT_OPTIONS
 

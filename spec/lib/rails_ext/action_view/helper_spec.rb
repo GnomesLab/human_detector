@@ -36,15 +36,15 @@ describe HumanDetector::ActionView::Helper do
       end
 
       it 'label_class' do
-        @html.css('label.question').should_not be_empty
+        @html.css('label.human_detector_question').should_not be_empty
       end
 
       it 'input_class' do
-        @html.css('input.answer').should_not be_empty
+        @html.css('input.human_detector_answer').should_not be_empty
       end
 
       it 'input_name' do
-        @html.css('input[type=text]').attribute('name').value.should == 'question_answer'
+        @html.css('input[type=text]').attribute('name').value.should == 'human_detector_answer'
       end
 
       it 'input_text' do
@@ -93,7 +93,7 @@ describe HumanDetector::ActionView::Helper do
     end
 
     it 'must have a name' do
-      @html.css('input[type=hidden]').attribute('name').value.should == 'question_id'
+      @html.css('input[type=hidden]').attribute('name').value.should == 'human_detector_question_id'
     end
 
     it 'must have a value' do
@@ -102,7 +102,7 @@ describe HumanDetector::ActionView::Helper do
 
     it 'the value is the encrypted question.id' do
       HumanDetector::Cipher.decrypt(@html.css('input[type=hidden]').attribute('value').value).
-        should == HumanDetector::Question.first.id.to_s + subject.controller.session[:session_id].to_s
+        should == "#{HumanDetector::Question.first.id}_#{subject.controller.session[:session_id]}"
     end
 
   end #hidden_field

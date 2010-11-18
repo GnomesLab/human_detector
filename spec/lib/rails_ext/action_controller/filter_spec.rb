@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HumanDetector::ActionControllerHelper do
+describe HumanDetector::ActionController::Filter do
 
   subject { ActionController::Base }
 

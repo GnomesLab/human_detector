@@ -32,9 +32,10 @@ begin
   end
 rescue LoadError => load_error
   puts "Please run bundle install"
-rescue StandardError => e
+  throw load_error
+rescue StandardError => standard_error
   puts "Something went wrong while loading the environment."
-  throw e
+  throw standard_error
 end
 
 # Requires supporting files with custom matchers and macros in ./support/ and its subdirectories.

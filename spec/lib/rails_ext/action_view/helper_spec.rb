@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe HumanDetector::FormTagHelper do
+describe HumanDetector::ActionView::Helper do
 
   subject do
     helper = ActionView::Base.new
@@ -21,8 +21,8 @@ describe HumanDetector::FormTagHelper do
 
   describe 'inclusion' do
 
-    it 'is included in FormTagHelper' do
-      ActionView::Helpers::FormTagHelper.instance_methods.should include :human_detector_tag
+    it 'is included in ActionView::Base' do
+      ActionView::Base.instance_methods.should include :human_detector_tag
     end
 
   end # inclusion

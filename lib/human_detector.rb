@@ -1,9 +1,13 @@
 module HumanDetector
 
-  autoload :FormTagHelper, 'human_detector/form_tag_helper'
-  autoload :DefaultRenderer, 'human_detector/default_renderer'
-  autoload :ActionControllerHelper, 'human_detector/action_controller_helper'
-  autoload :Question, 'human_detector/question'
-  autoload :Cipher, 'human_detector/cipher'
+  autoload :ActionView,             'human_detector/rails_ext/action_view'
+  autoload :ActionController,       'human_detector/rails_ext/action_controller'
+  autoload :DefaultRenderer,        'human_detector/default_renderer'
+  autoload :Question,               'human_detector/question'
+  autoload :Cipher,                 'human_detector/cipher'
 
 end # HumanDetector
+
+# Rails extentions
+ActionView::Base.send :include, HumanDetector::ActionView::Helper
+ActionController::Base.send :extend, HumanDetector::ActionController::Filter

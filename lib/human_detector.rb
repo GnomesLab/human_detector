@@ -10,4 +10,4 @@ end # HumanDetector
 
 # Rails extentions
 ActionView::Base.send :include, HumanDetector::ActionView::Helper
-ActionController::Base.send :extend, HumanDetector::ActionController::Filter
+ActionController::Base.send :include, HumanDetector::ActionController::Filter

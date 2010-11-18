@@ -10,22 +10,17 @@ describe HumanDetector::ActionController::Filter do
     end
   end # inclusion
 
-  describe "human_detector_default_options" do
+  describe "HUMAN_DETECTOR_DEFAULT_OPTIONS constant" do
 
     before(:each) do
       @action_controller = subject
     end
 
-    it "returns the default options hash" do
-      @action_controller.send(:human_detector_default_options).
+    it "contains the default options hash" do
+      @action_controller::HUMAN_DETECTOR_DEFAULT_OPTIONS.
         should == { :only => { :create => :new, :update => :edit },
                     :flash => { :error => 'Invalid captcha answer' },
                     :input_name => 'question_answer' }
-    end
-
-    it "uses memoization" do
-      @action_controller.send(:human_detector_default_options).object_id.
-        should == @action_controller.send(:human_detector_default_options).object_id
     end
 
   end # default_human_detector_options

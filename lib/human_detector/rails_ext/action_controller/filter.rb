@@ -4,22 +4,29 @@ module HumanDetector
 
     module Filter
 
-      def human_detector(options={})
-        options.reverse_merge! human_detector_default_options
+      HUMAN_DETECTOR_DEFAULT_OPTIONS = { :only => { :create => :new, :update => :edit },
+                                         :flash => { :error => 'Invalid captcha answer' },
+                                         :input_name => 'question_answer' }
 
-        before_filter :only => (options[:only].is_a?(Hash) ? options[:only].keys : options[:only]) do
-          human_filter(options)
-        end
-      end # human_detector
+      def self.included(klass)
+        klass.send :extend, ClassMethods
+      end
+
+      module ClassMethods
+
+        def human_detector(options={})
+          options.reverse_merge! HUMAN_DETECTOR_DEFAULT_OPTIONS
+
+          before_filter :only => (options[:only].is_a?(Hash) ? options[:only].keys : options[:only]) do
+            human_filter(options)
+          end
+        end # human_detector
+
+      end # ClassMethods
 
       private
-        def human_detector_default_options
-          @human_detector_default_options ||= { :only => { :create => :new, :update => :edit },
-                                                :flash => { :error => 'Invalid captcha answer' },
-                                                :input_name => 'question_answer' }
-        end
-
         def human_filter(options)
+          debugger
           human_fail(options) unless params.include?('question_id') && params[options[:input_name]] ==
             Question.find_by_id(HumanDetector::Cipher.decrypt(params['question_id'])).try(:answer)
         end # human_filter
@@ -46,7 +53,7 @@ module HumanDetector
         def extract_render_name(options)
           options[:only].is_a?(Hash) ?
             options[:only][action_name.to_sym] :
-            human_detector_default_options[:only][action_name.to_sym] || :index
+            HUMAN_DETECTOR_DEFAULT_OPTIONS[:only][action_name.to_sym] || :index
         end # extract_render_name
 
     end # Filter

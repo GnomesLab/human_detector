@@ -1,3 +1,8 @@
+require 'action_view'         unless defined? ActionView::Base
+require 'action_controller'   unless defined? ActionController::Base
+require 'active_record'       unless defined? ActiveRecord::Base
+require 'activerecord_random'
+
 module HumanDetector
 
   autoload :ActionView,             'human_detector/rails_ext/action_view'

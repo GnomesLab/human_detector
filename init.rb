@@ -1,5 +1,1 @@
-require 'action_view'
-require 'action_controller'
-require 'active_record'
-require 'activerecord_random'
 require 'human_detector'

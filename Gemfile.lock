@@ -118,6 +118,3 @@ DEPENDENCIES
   rspec (~> 2.0.0)
   ruby-debug19 (~> 0.11.0)
   sqlite3-ruby (~> 1.3.2)
-
-METADATA
-  version: 1.0.6

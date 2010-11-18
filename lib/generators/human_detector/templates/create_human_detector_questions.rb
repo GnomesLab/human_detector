@@ -26,7 +26,7 @@ class CreateHumanDetectorQuestions < ActiveRecord::Migration
       10 => "ten" }.each { |k,v| HumanDetector::Question.create(:title=> "#{k} in English (e.g. #{v})?", :answer=> v) }
 
     10.times do |i|
-      HumanDetector::Question.create(:title => "Which year was in 2010 minus #{i} (e.g. #{2010 - (i + 1)})?",
+      HumanDetector::Question.create(:title => "Which year was in 2010 minus #{i + 1} (e.g. #{2010 - (i + 1)})?",
                                      :answer => (2010 - (i + 1)).to_s)
     end
 

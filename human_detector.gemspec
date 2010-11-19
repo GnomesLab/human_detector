@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
 
   s.name        = 'human_detector'
-  s.version     = '1.0.0'
+  s.version     = '1.0.0.rc2'
   s.summary     = 'A logic user friendly captcha for Rails (e.g. How much is 5 + 3?)'
 
   s.authors     = ["Gnomeslab, Lda."]
